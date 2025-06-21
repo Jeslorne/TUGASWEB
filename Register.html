@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Form Pendaftaran</title>
+</head>
+<body>
+  <header>
+    <h1>New Year's Class Has Been Opened!</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </nav>
+
+  </header>
+
+  <main>
+    <section id="register">
+      <h2>We have special promotion for you! Register now!</h2>
+       <form>
+    <table>
+      <tr>
+        <td>Full Name</td>
+        <td>:</td>
+        <td><input type="text" name="full_name" required></td>
+      </tr>
+      <tr>
+        <td>Place of Birth</td>
+        <td>:</td>
+        <td><input type="text" name="place_of_birth" required></td>
+      </tr>
+      <tr>
+        <td>Date of Birth</td>
+        <td>:</td>
+        <td><input type="date" name="date_of_birth" required></td>
+      </tr>
+      <tr>
+        <td>Address</td>
+        <td>:</td>
+        <td><textarea name="address" rows="4" cols="40" required></textarea></td>
+      </tr>
+      <tr>
+        <td>Gender</td>
+        <td>:</td>
+        <td>
+          <input type="radio" name="gender" value="Male">Male
+          <input type="radio" name="gender" value="Female">Female
+        </td>
+      </tr>
+      <tr>
+        <td>Religion</td>
+        <td>:</td>
+        <td>
+          <select name="religion" required>
+            <option selected disabled>Select Religion</option>
+            <option value="Islam">Islam</option>
+            <option value="Christian">Christian</option>
+            <option value="Catholic">Catholic</option>
+            <option value="Buddha">Buddha</option>
+            <option value="Hindu">Hindu</option>
+            <option value="Confucianism">Confucianism</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td>:</td>
+        <td><input type="email" name="email" required></td>
+      </tr>
+      <tr>
+        <td>Password</td>
+        <td>:</td>
+        <td><input type="password" name="password" required></td>
+      </tr>
+      <tr>
+        <td>Photo</td>
+        <td>:</td>
+        <td><input type="file" name="photo"></td>
+      </tr>
+      <tr>
+        <td>Program Type</td>
+        <td>:</td>
+        <td>
+          <input type="radio" name="program_type" value="Regular" onclick="togglePrivate(false)"> Regular
+          <input type="radio" name="program_type" value="Private" onclick="togglePrivate(true)"> Private
+        </td>
+      </tr>
+      <tr>
+        <td>Apply for Class</td>
+        <td>:</td>
+        <td>
+          <select name="class_apply" id="class_apply" required>
+            <option disabled selected>Select Class</option>
+            <option value="Beginner">Beginner</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Preferred Day</td>
+        <td>:</td>
+        <td>
+          <select name="preferred_day" id="preferred_day" onchange="updatePrivateOptions()" required>
+            <option disabled selected>Select Day</option>
+            <option>Monday</option>
+            <option>Tuesday</option>
+            <option>Wednesday</option>
+            <option>Thursday</option>
+            <option>Friday</option>
+            <option>Saturday</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Preferred Time</td>
+        <td>:</td>
+        <td><input type="time" id="preferred_time" name="preferred_time" onchange="updatePrivateOptions()" required></td>
+      </tr>
+      <tr id="privateRow" style="display:none;">
+        <td>Private Class Session</td>
+        <td>:</td>
+        <td>
+          <select name="private_teacher" id="private_teacher">
+            <option disabled selected>Select Teacher</option>
+          </select>
+          <p id="no_teacher_msg" style="color:red; display:none;">No teacher available at selected day and time.</p>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>
+          <input type="submit" value="Submit">
+          <input type="reset" value="Reset">
+        </td>
+      </tr>
+    </table>
+  </form>
+  <script>
+    const privateSessions = [
+      { teacher: 'Mr. Smith', level: 'Beginner', day: 'Monday', time: '10:00' },
+      { teacher: 'Ms. Johnson', level: 'Intermediate', day: 'Wednesday', time: '14:00' },
+      { teacher: 'Mr. Lee', level: 'Advanced', day: 'Friday', time: '18:00' }
+    ];
+
+    function togglePrivate(show) {
+      document.getElementById('privateRow').style.display = show ? '' : 'none';
+      updatePrivateOptions();
+    }
+
+    function updatePrivateOptions() {
+      const programType = document.querySelector('input[name="program_type"]:checked');
+      if (!programType || programType.value !== 'Private') return;
+
+      const selectedDay = document.getElementById('preferred_day').value;
+      const selectedTime = document.getElementById('preferred_time').value;
+      const selectedClass = document.getElementById('class_apply').value;
+      const privateTeacherSelect = document.getElementById('private_teacher');
+      const noTeacherMsg = document.getElementById('no_teacher_msg');
+
+      privateTeacherSelect.innerHTML = '<option disabled selected>Select Teacher</option>';
+      let found = false;
+      privateSessions.forEach(session => {
+        if (session.day === selectedDay && session.time === selectedTime && session.level === selectedClass) {
+          const option = document.createElement('option');
+          option.value = `${session.teacher} (${session.level} - ${session.day} ${session.time})`;
+          option.textContent = `${session.teacher} (${session.level} - ${session.day} ${session.time})`;
+          privateTeacherSelect.appendChild(option);
+          found = true;
+        }
+      });
+      noTeacherMsg.style.display = found ? 'none' : '';
+    }
+  </script>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Global English Course. All rights reserved.</p>
+  </footer>
+</body>
+</html>
