@@ -4,15 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Global English Course - About</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
   <header>
     <h1>About Global English Course</h1>
         <nav>
             <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="register.html">Register</a></li>
+                <li><a href="home.html"><i class="fas fa-house"></i>Home</a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle"></i>About</a></li>
+                <li><a href="register.html"><i class="fas fa-user-plus"></i>Register</a></li>
             </ul>
         </nav>
   </header>
@@ -29,45 +31,53 @@
           ✔ Modern learning materials and methods<br/>
           ✔ Online and offline class options
         </p>
+        <br>
 
     <section id="teachers">
       <h2>Meet Our Teachers</h2>
-      <article>
+    <div class="teacher-grid">
+      <article class="teacher-card">
         <h3>Mr. Smith</h3>
         <p><strong>Teaches:</strong> Beginner (Monday 10:00)</p>
         <p><strong>Background:</strong> B.A. English Literature, Cambridge</p>
         <p><strong>Certifications:</strong> TESOL, IELTS Trainer</p>
         <img src="smith.jpg" alt="Mr.Smith" width="300" />
       </article>
-      <article>
+
+      <article class="teacher-card">
         <h3>Mr. Johnson</h3>
         <p><strong>Teaches:</strong> Intermediate (Wednesday 14:00)</p>
         <p><strong>Background:</strong> M.A. Applied Linguistics, Melbourne</p>
         <p><strong>Certifications:</strong> CELTA, TOEFL Instructor</p>
         <img src="johnson.webp" alt="Mr.Johnson" width="300" />
       </article>
-      <article>
+
+      <article class="teacher-card">
         <h3>Mr. Lee</h3>
         <p><strong>Teaches:</strong> Advanced (Friday 18:00)</p>
         <p><strong>Background:</strong> M.Ed. TESOL, Toronto</p>
         <p><strong>Certifications:</strong> DELTA, Business English</p>
         <img src="lee.jpg" alt="Mr.Lee" width="300" />
       </article>
-      <article>
+
+      <article class="teacher-card">
         <h3>Mrs. Clara</h3>
         <p><strong>Teaches:</strong> Beginner & Intermediate (Tuesday, Thursday)</p>
         <p><strong>Background:</strong> B.Ed. English, Sydney</p>
         <p><strong>Certifications:</strong> TEFL, Cambridge Examiner</p>
         <img src="clara.jpg" alt="Mrs.Clara" width="300" />
       </article>
-      <article>
+
+      <article class="teacher-card">
         <h3>Mr. Andi</h3>
         <p><strong>Teaches:</strong> Advanced (Tuesday, Thursday)</p>
         <p><strong>Background:</strong> M.A. English Education, UI</p>
         <p><strong>Certifications:</strong> TOEIC Trainer, TESOL</p>
         <img src="andy.jpg" alt="Mr.Andi" width="300" />
       </article>
+    </div>
     </section>
+    <br>
 
     <section id="schedule">
       <h2>Class Schedule</h2>
@@ -139,7 +149,7 @@
     window.onload = updateSchedule;
   </script>
 </section>
-
+<br>
     <section>
   <h2>Top Performing Students</h2>
   <label for="studentLevelSelect">Select Level:</label>
@@ -203,7 +213,7 @@
   </script>
 </section>
 
-    <section id="contact">
+    <section id="contact" class="contact-box">
       <h2>Contact Admin</h2>
         <p>📞+62 812 3456 7890</p>
         <p>📧admin@globalenglish.com</p>
