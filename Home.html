@@ -4,40 +4,51 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Global English Course - Home</title>
+
+  <!-- Style utama  -->
   <link rel="stylesheet" href="./style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Font Awesome (ikon navbar) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+  <!-- ================= HEADER ================ -->
   <header>
     <h1>Global English Course</h1>
+
     <nav>
-            <ul>
-                <li><a href="home.html"><i class="fas fa-house"></i>Home</a></li>
-                <li><a href="about.html"><i class="fas fa-info-circle"></i>About</a></li>
-                <li><a href="register.html"><i class="fas fa-user-plus"></i>Register</a></li>
-            </ul>
-        </nav>
+      <ul>
+        <li><a href="home.html"><i class="fas fa-house"></i>Home</a></li>
+        <li><a href="about.html"><i class="fas fa-info-circle"></i>About</a></li>
+        <li><a href="register.html"><i class="fas fa-user-plus"></i>Register</a></li>
+      </ul>
+    </nav>
   </header>
 
+  <!-- ================= MAIN CONTENT ================ -->
   <main>
     <section>
       <h2>Welcome to Global English Course!</h2>
       <p>Improve your English with our expert-led courses!
       From beginner to advanced, our classes focus on communication skills, grammar mastery, and 
       pronunciation improvement—all in a fun, supportive environment.</p>
-              <p>🎯 Why Choose Us?</p>
-                     <p>✔ Certified and experienced teachers<br>
-                      ✔ Small class sizes for personalized attention<br>
-                      ✔ Modern learning materials and methods<br>
-                      ✔ Online and offline class options</p>
-      <br>
+
+      <p>🎯 <strong>Why Choose Us?</strong></p>
+      <p>
+        ✔ Certified and experienced teachers<br>
+        ✔ Small class sizes for personalized attention<br>
+        ✔ Modern learning materials and methods<br>
+        ✔ Online and offline class options
+      </p>
 
       <h2>About Our Course</h2>
       <p>Global English Course is committed to helping you master English with practical and enjoyable lessons.</p>
 
       <h3>Vision</h3>
       <p>To become the leading English language course that empowers individuals globally.</p>
-      <br>
+
       <h3>Mission</h3>
       <ul class="mission-list">
         <li>Deliver high-quality, learner-focused English education.</li>
@@ -45,20 +56,104 @@
         <li>Incorporate modern teaching methods and technology.</li>
       </ul>
 
-      <br>
       <h3>Inside Our Room?</h3>
-      
-        <p>We would like to show you our studnets and teacher! </p>
-        <img src="ruangankelas.jpg" alt="Class Activity" width="600" />
+      <p>We would like to show you our students and teacher!</p>
+      <img src="ruangankelas.jpg" alt="Class Activity" width="600" />
 
-        <p>This is our life documentary!</p>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/PwJ02SGTc3c?si=sCKtd7AZlpNvay11" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      
+      <p>This is our life documentary!</p>
+      <iframe width="560" height="315"
+              src="https://www.youtube.com/embed/PwJ02SGTc3c?si=sCKtd7AZlpNvay11"
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </section>
+
+    <!-- ================= QUIZ SECTION ================ -->
+    <hr>
+    <section id="quiz">
+      <h2>Test Your English – Mini Quiz</h2>
+
+      <form id="quiz-form">
+        <ol>
+          <li>
+            Which sentence is grammatically correct?<br>
+            <label><input type="radio" name="q1" value="0">I goes to school.</label><br>
+            <label><input type="radio" name="q1" value="1">I go to school.</label><br>
+            <label><input type="radio" name="q1" value="0">I going to school.</label>
+          </li><br>
+
+          <li>
+            Choose the correct past tense of <em>“eat”</em>:<br>
+            <label><input type="radio" name="q2" value="0">eated</label><br>
+            <label><input type="radio" name="q2" value="1">ate</label><br>
+            <label><input type="radio" name="q2" value="0">eats</label>
+          </li><br>
+
+          <li>
+            “She has lived in Jakarta _____ 2020.” The right preposition is …<br>
+            <label><input type="radio" name="q3" value="1">since</label><br>
+            <label><input type="radio" name="q3" value="0">for</label><br>
+            <label><input type="radio" name="q3" value="0">during</label>
+          </li><br>
+
+          <li>
+            Identify the adjective:<br>
+            <label><input type="radio" name="q4" value="1">beautiful</label><br>
+            <label><input type="radio" name="q4" value="0">quickly</label><br>
+            <label><input type="radio" name="q4" value="0">happiness</label>
+          </li><br>
+
+          <li>
+            Pick the correct question tag:<br>
+            “You’re a student, _____?”<br>
+            <label><input type="radio" name="q5" value="0">isn’t you</label><br>
+            <label><input type="radio" name="q5" value="1">aren’t you</label><br>
+            <label><input type="radio" name="q5" value="0">don’t you</label>
+          </li>
+        </ol>
+
+        <button type="submit">Submit Answers</button>
+      </form>
+
+      <p id="result" style="font-weight:bold; margin-top:1rem;"></p>
     </section>
   </main>
 
+  <!-- ================= FOOTER ================ -->
   <footer>
     <p>&copy; 2025 Global English Course. All rights reserved.</p>
   </footer>
+
+  <!-- ================= QUIZ LOGIC (JavaScript) ================ -->
+  <script>
+    const quizForm   = document.getElementById('quiz-form');
+    const resultArea = document.getElementById('result');
+
+    quizForm.addEventListener('submit', function (event) {
+      event.preventDefault();                 // Stop page reload
+
+      // Pastikan semua soal terjawab
+      const unanswered = [...quizForm.elements]
+        .filter(el => el.type === 'radio')
+        .reduce((acc, el) => {
+          acc[el.name] = acc[el.name] || el.checked;
+          return acc;
+        }, {});
+
+      if (Object.values(unanswered).includes(false)) {
+        resultArea.textContent = 'Please answer all questions before submitting!';
+        return;
+      }
+
+      // Hitung skor
+      let score = 0;
+      const checked = quizForm.querySelectorAll('input[type="radio"]:checked');
+      checked.forEach(ans => score += Number(ans.value));
+
+      // Tampilkan skor
+      resultArea.textContent = `Your score: ${score} / 5`;
+      resultArea.scrollIntoView({ behavior: 'smooth' });
+    });
+  </script>
 </body>
 </html>
