@@ -15,6 +15,7 @@ body {
 
 p {
     color: black;
+    font-size: large;
 }
 label{
     color: black;
@@ -78,6 +79,7 @@ nav ul li a {
 .mission-list{
     padding-left: 25px;
     color: black;
+    font-size: large;
 }
 
 nav ul li a:hover {
